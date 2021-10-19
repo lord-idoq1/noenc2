@@ -689,13 +689,13 @@ role = 'Immortal'
 
 const daftar1 = `Hai kak  ${pushname} ${ucapanWaktu} \n\nSebelum Menggunakan ${botName} Verify Terlebih Dahulu Ya `
 const daftar2 = '```Ketik Tombol Di Bawah Untuk Verify Kak\nvinzstore```'
-const daftar3 = [{buttonId: noprefix ? "verify" : "!"+"verify",buttonText: {displayText: `⬡ DAFTAR `,},type: 1,},]
-const nomenu = [{buttonId: noprefix ? "menu" : "!"+"menu",buttonText: {displayText: `⬡ MENU `,},type: 1,},]
+const daftar3 = [{buttonId: noprefix ? "verify" : "."+"verify",buttonText: {displayText: `⬡ DAFTAR🐦 `,},type: 1,},]
+const nomenu = [{buttonId: noprefix ? "menu" : "."+"menu",buttonText: {displayText: `⬡ LIST MENU🐦 `,},type: 1,},]
 
 ///////< PREMIUM BUTTON BY IKY > ////////
 const prem1 = `Hai kak  ${pushname} ${ucapanWaktu} \n\n Fitur Ini Khusus Member Premium Silahkan Buy Premium Untuk Menggunakan Fitur Ini `
 const prem2 = '```KLIK TOMBOL DI BAWAH UNTUK MELIHAT LIST PREMIUM\n follow @vinzstore_1```'
-const prem3 = [{buttonId: noprefix ? "sewabot" : "!"+"sewabot",buttonText: {displayText: `⬡ BUY PREMIUM `,},type: 1,},]
+const prem3 = [{buttonId: noprefix ? "sewabot" : "."+"sewabot",buttonText: {displayText: `⬡ BUY PREMIUM `,},type: 1,},]
 //////< FUNCTION LEVELING > ///////
 if (isGroup && !kyy.key.fromMe && !level.isGained(sender) && isLevelingOn) {
   try {
@@ -1066,7 +1066,7 @@ exec(`webpmux -set exif ./src/sticker/data.exif ${asw} -o ${asw}`, async (error)
 let Levelnye = level.getLevelingLevel(sender, _level)
 let Xpluu = level.getLevelingXp(sender, _level)
 let requiredXplu = 10 * Math.pow(Levelnye, 2) + 50 * Levelnye + 100
-tc = `MAAF KA NOMER KAMU BLOM TERDAFTAR DI DATABASE SILAHKAN KETIK !verify UNTUK MENDAFTAR DI VINZ BOTZ`
+tc = `MAAF KA NOMER KAMU BLOM TERDAFTAR DI DATABASE SILAHKAN KETIK @prefixverify UNTUK MENDAFTAR DI VINZ BOTZ`
 ind = {
   wait: `⌛ Sedang di Prosess ⌛`,
   success: `✔️ Berhasil ✔️`,
@@ -2250,22 +2250,19 @@ menu =`${botName}
  ${ucapanWaktu} ${pushname} 👋
  
  I Am ${botName}
- WhatsApp bots that can
- Help You Help
- Doing something
- If Confused Please
- Type !example Yes Sis!
+ Hello om apa kabar 😀
  
+ JANGAN LUPA DONASI🐦
 
-📝 BOT INFORMATION
+🤖*_INFO BOT_*🤖
 
 ▹ Speed : *${latensie.toFixed(4)} _Second_*
 ▹ Active : *${runtime(process.uptime())}*
 ▹ Platfrom : *${os.platform()}*
 ▹ Total: *${_registered.length}* *User*
- 
-👤 YOUR INFORMATION
+▹ Creator : @6285919939498
 
+👤 USER INFO
 ▹ Username: *${pushname}*
 ▹ Sender : *@${sender.split('@')[0]}*
 ▹ Bio Info : *${thu.status}*
@@ -2275,7 +2272,8 @@ menu =`${botName}
 ▹ XP : *${Xpluu} / ${requiredXplu}*
 
 
-Flw: instagram.com/vinzstore_1/ `
+Flw: instagram.com/vinzstore_1/
+*_ ©Vinz_*
 
 
 ikyy.sendMessage(from, { contentText: `${menu}`, footerText: `🐣 Day : ${week} ${weton}\n🐥 Date : ${date}`,buttons: [{ buttonId: noprefix ? "command" : "!"+"command", buttonText: { displayText: 'LIST MESSAGE' }, type: 1 },{ buttonId: noprefix ? "sewabot" : "!"+"sewabot", buttonText: { displayText: '🏷️ RENT A BOT' }, type: 1 },{ buttonId: noprefix ? "menu" : "!"+"botanon", buttonText: { displayText: 'ANON BOT' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: ikyads, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
@@ -2386,7 +2384,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : 
  `
   sendButMessage(from, wibu, `created follow @vinzstore_1`, [
   {
- buttonId: noprefix ? "menu" : "!"+"menu",
+ buttonId: noprefix ? "menu" : "."+"menu",
  buttonText: {
 displayText: `⬡ BACK TO MENU `,
  },
@@ -3794,7 +3792,6 @@ type: 1,
  menu =`${botName}
 
 ⬡ 𝐋𝐈𝐒𝐓 𝐌𝐄𝐍𝐔
-▹ ${prefix}bkp *random*
 ▹ ${prefix}bokep1
 ▹ ${prefix}bokep2
 ▹ ${prefix}bokep3
@@ -4321,7 +4318,7 @@ if (isTTT) return reply('Sedang Ada Permainan Di Grub Ini, Harap Tunggu')
   case 't':
   titid =  `SILAHKAN PILIH DI BAWAH UNTUK MELANJUTKAN`
 
-  sendButMessage(from, titid, `crated ikyy ads`, [
+  sendButMessage(from, titid, `crated vinz`, [
   {
  buttonId: `Y`,
  buttonText: {
@@ -4810,7 +4807,7 @@ const anuu = `「 *PENDAFTARAN USER* 」
 
 *「 Vinz Botz 」*`
 ikyads = await getBuffer(`http://hadi-api.herokuapp.com/api/card/verify?nama=${encodeURI(pushname)}&member=${_registered.length}&seri=${serialUser}&pp=${ppimg}&bg=${ppimg}`)
-buttons = [{buttonId: noprefix ? "menu" : "!"+"menu",buttonText:{displayText: `🏷️MENU`},type:1}]
+buttons = [{buttonId: noprefix ? "menu" : "${prefix}"+"menu",buttonText:{displayText: `🏷️MENU`},type:1}]
 imageMsg = (await ikyy.prepareMessageMedia(ikyads, "imageMessage", { thumbnail: ikyads, })).imageMessage
 buttonsMessage = {footerText:'Jangan Lupa Donasi Ya Kak ☕', imageMessage: imageMsg,
 contentText:`${anuu}`,buttons,headerType:4}
